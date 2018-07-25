@@ -125,6 +125,58 @@ function linkedListGenerator(){
 
   function insert(value, number) {
     
+    let newNode = {
+      value: value,
+      next: null
+    }
+    let previousNode = get(number - 1);
+    let targetNode = get(number);
+    let nextNode = get(number + 1);
+    console.log('');
+    console.log('insert value', value);
+    console.log('insert into number', number, 'position');
+    console.log('insert newNode', newNode);
+    console.log('');
+    console.log('insert previousNode', previousNode);
+    console.log('insert targetNode', targetNode);
+    console.log('insert nextNode', nextNode);
+
+    
+    if (number < 0 || targetNode === false) {
+      console.log('insert if (number<0 || number>tail.next) number', number, 'is false');
+      return false;
+    }
+    else if (number === 0) {
+      console.log('');
+      head = newNode;
+      head.next = targetNode;
+      console.log('insert else if (number===0) new head =', head);
+      console.log('insert else if (number===0) newNode.next =', newNode.next);
+    }
+    else {
+      if (targetNode.next === null) {
+        console.log('insert elses if (targetNode.next===null) targetNode.next was', targetNode.next);
+        
+        console.log('');
+        previousNode.next = newNode;
+        console.log('insert elses if (targetNode.next===null) previousNode =', previousNode);
+        newNode.next = targetNode;
+        console.log('insert elses if (targetNode.next===null) newNode =', newNode);
+        console.log('insert elses if (targetNode.next===null) newNode.next =', newNode.next);
+        tail = targetNode;
+        console.log('insert elses if (targetNode.next===null) tail =', tail);
+      }
+      else {
+        console.log('');
+        previousNode.next = newNode;
+        console.log('insert elses else previousNode.next', previousNode.next);
+        newNode.next = targetNode;
+        console.log('insert elses else newNode', newNode);
+        console.log('insert elses else newNode.next', newNode.next);
+      }
+    }
+
+
   }
 
   return {
