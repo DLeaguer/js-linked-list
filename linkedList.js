@@ -51,7 +51,7 @@ function linkedListGenerator(){
     console.log('');
     console.log('get number', number);
  
-    // first return false not needed
+    // first return false not needed, false managed in for loop
 
     // if (number < 0 || !head) {
     //   console.log('get if !head || number<0', number, 'is false');
@@ -162,29 +162,29 @@ function linkedListGenerator(){
       console.log('insert else if (number===0) newNode.next =', newNode.next);
     }
     else {
-      if (targetNode.next === null) {
-        console.log('insert elses if (targetNode.next===null) targetNode.next was', targetNode.next);
+      // if (targetNode.next === null) {
+      //   console.log('insert elses if (targetNode.next===null) targetNode.next was', targetNode.next);
         
-        console.log('');
-        previousNode.next = newNode;
-        console.log('insert elses if (targetNode.next===null) previousNode =', previousNode);
-        newNode.next = targetNode;
-        console.log('insert elses if (targetNode.next===null) newNode =', newNode);
-        console.log('insert elses if (targetNode.next===null) newNode.next =', newNode.next);
+      //   console.log('');
+      //   previousNode.next = newNode;
+      //   console.log('insert elses if (targetNode.next===null) previousNode =', previousNode);
+      //   newNode.next = targetNode;
+      //   console.log('insert elses if (targetNode.next===null) newNode =', newNode);
+      //   console.log('insert elses if (targetNode.next===null) newNode.next =', newNode.next);
 
-        // tail not needed, targetNode.next already null
+      //   // tail not needed, targetNode.next already null
 
-        // tail = targetNode;
-        // console.log('insert elses if (targetNode.next===null) tail =', tail);
-      }
-      else {
+      //   // tail = targetNode;
+      //   // console.log('insert elses if (targetNode.next===null) tail =', tail);
+      // }
+      // else {
         console.log('');
         previousNode.next = newNode;
         console.log('insert elses else previousNode.next', previousNode.next);
         newNode.next = targetNode;
         console.log('insert elses else newNode', newNode);
         console.log('insert elses else newNode.next', newNode.next);
-      }
+      // }
     }
   }
 
