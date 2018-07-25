@@ -51,11 +51,13 @@ function linkedListGenerator(){
     console.log('');
     console.log('get number', number);
  
-    if (number < 0 || !head) {
-      console.log('get if !head || number<0', number, 'is false');
-      return false;
-    }
-    else if (number === 0) {
+    // first return false not needed
+
+    // if (number < 0 || !head) {
+    //   console.log('get if !head || number<0', number, 'is false');
+    //   return false;
+    // }
+    /* else */ if (number === 0) {
       console.log('get head if number === 0', head);
       return head;
     }
@@ -65,6 +67,10 @@ function linkedListGenerator(){
       console.log('get else targetNode = head', targetNode);
       console.log('get else targetNode.next', targetNode.next);
       console.log('get else targetNode.next.next', targetNode.next.next);
+
+      // comment out the next two console.logs, to test remove, 
+      //   otherwise, an error reads Cannot read property 'next' of null
+
       // console.log('get else targetNode.next.next.next', targetNode.next.next.next);
       // console.log('get else targetNode.next.next.next.next', targetNode.next.next.next.next);
       console.log('');
@@ -76,8 +82,10 @@ function linkedListGenerator(){
           console.log('get else for if (targetNode.next === null)', targetNode.next, ' =  false');
           return false;
         }
-        targetNode = targetNode.next;
-        console.log('get else for targetNode = targetNode.next', targetNode);
+        else {
+          targetNode = targetNode.next;
+          console.log('get else for targetNode = targetNode.next', targetNode);
+        }
       }
       console.log('get else return targetNode', targetNode);
       return targetNode;
@@ -163,8 +171,11 @@ function linkedListGenerator(){
         newNode.next = targetNode;
         console.log('insert elses if (targetNode.next===null) newNode =', newNode);
         console.log('insert elses if (targetNode.next===null) newNode.next =', newNode.next);
-        tail = targetNode;
-        console.log('insert elses if (targetNode.next===null) tail =', tail);
+
+        // tail not needed, targetNode.next already null
+
+        // tail = targetNode;
+        // console.log('insert elses if (targetNode.next===null) tail =', tail);
       }
       else {
         console.log('');
@@ -175,8 +186,6 @@ function linkedListGenerator(){
         console.log('insert elses else newNode.next', newNode.next);
       }
     }
-
-
   }
 
   return {
