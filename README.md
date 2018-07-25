@@ -7,6 +7,7 @@ The last **node** in a Linked List will have a `null` value for the `next` prope
 ## Linked List Example
 
     {
+    if (head === null) {
       value: 'Ready Player One',
       next: {
         value: '1982',
